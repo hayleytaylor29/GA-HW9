@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitPub App!</title>
     <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
         body {
             background-color: rgb(7, 40, 90);
-            color:#8dbce2
+            color:#8dbce2;
+            text-align: center;
+            font-family: 'Rajdhani', sans-serif;
         }
         li {
             text-transform: capitalize;
@@ -17,10 +20,20 @@
         a {
             color: #8dbce2;
         }
+        a:hover {
+            color:rgb(186, 241, 122)
+        }
+        h2 {
+            text-transform: capitalize;
+        }
+        img {
+            max-width: 50%;
+            max-height: 50%;
+        }
         </style>
 </head>
 <body>
-    <h1>At foo bar</h1>
+    <h1>@ FOO BAR</h1>
     <h2>
         <%=allDrinks.name%>
     </h2>
