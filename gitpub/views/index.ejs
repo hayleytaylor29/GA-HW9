@@ -8,11 +8,27 @@
     <style type="text/css">
         body {
             background-color: rgb(7, 40, 90);
-            color:rgb(141, 188, 226)
+            color:#8dbce2
+        }
+        li {
+            text-transform: capitalize;
+            list-style: none;
+        }
+        a {
+            color: #8dbce2;
         }
         </style>
 </head>
 <body>
     <h1>Welcome to GitPub!</h1>
+    <ul>
+        <% for (let i = 0; i < allDrinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%=i%>">
+                <%=allDrinks[i].name%>
+                </a>
+            </li>
+       <% } %>
+    </ul>
 </body>
 </html>
