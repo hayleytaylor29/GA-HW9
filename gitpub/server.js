@@ -20,11 +20,17 @@ console.log(drinks);
 // })
 //change the route to display the html of index.ejs, inserting css into the html fil
 app.get('/drinks', (req, res) => {
-    res.render('index.ejs', {
+    res.render('show.ejs', {
         allDrinks: drinks
     })
 })
 
-app.get('/drinks/:id', (req, res) => {
-    res.send(req.params.id);
+// app.get('/drinks/:id', (req, res) => {
+//     res.send(req.params.id);
+// })
+
+app.get('/drinks/:indexDrinks', (req, res) => {
+    res.render('index.ejs', {
+        allDrinks: drinks[req.params.indexDrinks]
+    })
 })

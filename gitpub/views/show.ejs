@@ -20,16 +20,15 @@
         </style>
 </head>
 <body>
-    <h1>At foo bar</h1>
-    <h2>
-        <%=allDrinks.name%>
-    </h2>
-    <p><img src="<%=allDrinks.image%>" alt=""></p>
-    <h3>
-        <%=allDrinks.price%>
-    </h3>
-    <p>
-        <a href="/drinks">Back to Drinks List</a>
-    </p>
+    <h1>Welcome to GitPub!</h1>
+    <ul>
+        <% for (let i = 0; i < allDrinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%=i%>">
+                <%=allDrinks[i].name%>
+                </a>
+            </li>
+       <% } %>
+    </ul>
 </body>
 </html>
