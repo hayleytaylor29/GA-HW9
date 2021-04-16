@@ -11,3 +11,10 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send('Welcome to the Gitpub App!')
 })
+//variable for the "drinks" array to be exported into server.js
+let drinks = require('./models/drinks.js');
+console.log(drinks);
+//get route to have the "drinks" array display as json at /drinks
+app.get('/drinks', (req, res) => {
+    res.send(drinks)
+})
