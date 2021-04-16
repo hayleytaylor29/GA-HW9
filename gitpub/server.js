@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
 let drinks = require('./models/drinks.js');
 console.log(drinks);
 //get route to have the "drinks" array display as json at /drinks
+// app.get('/drinks', (req, res) => {
+//     res.send(drinks)
+// })
+//change the route to display the html of index.ejs, inserting css into the html fil
 app.get('/drinks', (req, res) => {
-    res.send(drinks)
+    res.render('index.ejs')
 })
