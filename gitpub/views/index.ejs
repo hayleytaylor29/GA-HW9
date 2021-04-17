@@ -7,42 +7,51 @@
     <title>GitPub App!</title>
     <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
-        body {
+         body {
             background-color: rgb(7, 40, 90);
             color:#8dbce2;
             text-align: center;
             font-family: 'Rajdhani', sans-serif;
         }
-        li {
-            text-transform: capitalize;
-            list-style: none;
+        /*class for unordered list*/
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-transform: capitalize
         }
+        /*class for links*/
         a {
             color: #8dbce2;
+
         }
+        /*class for hovering over link*/
         a:hover {
             color:rgb(186, 241, 122)
-        }
-        h2 {
-            text-transform: capitalize;
-        }
-        img {
-            max-width: 50%;
-            max-height: 50%;
         }
         </style>
 </head>
 <body>
-    <h1>@ FOO BAR</h1>
-    <h2>
-        <%=allDrinks.name%>
-    </h2>
-    <p><img src="<%=allDrinks.image%>" alt=""></p>
-    <h3>
-        <%=allDrinks.price%>
-    </h3>
-    <p>
-        <a href="/drinks">Back to Drinks List</a>
-    </p>
+    <h1>Welcome to GitPub!</h1>
+    <h2>Drinks</h2>
+    <ul>
+        <% for (let i = 0; i < allDrinks.length; i++) { %>
+            <li>
+                <a href="/drinks/<%=i%>">
+                    <%=allDrinks[i].name%>
+                </a>
+            </li>
+       <% } %>
+    </ul>
+    <h2>Food</h2>
+    <ul>
+        <% for (let i = 0; i < allFood.length; i++) { %>
+            <li>
+                <a href="/drinks/food/<%=i%>">
+                    <%=allFood[i].name%>
+                </a>
+            </li>
+       <% } %>
+        </ul>
 </body>
 </html>

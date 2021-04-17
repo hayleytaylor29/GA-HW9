@@ -14,14 +14,15 @@ app.get('/', (req, res) => {
 //variable for the "drinks" array to be exported into server.js
 let drinks = require('./models/drinks.js');
 console.log(drinks);
-//get route to have the "drinks" array display as json at /drinks
-// app.get('/drinks', (req, res) => {
-//     res.send(drinks)
-// })
-//change the route to display the html of index.ejs, inserting css into the html fil
+
+let food = require('./models/food.js');
+console.log(food);
+
+//change the route to display the html of show.ejs, inserting css into the html fil
 app.get('/drinks', (req, res) => {
-    res.render('show.ejs', {
-        allDrinks: drinks
+    res.render('index.ejs', {
+        allDrinks: drinks,
+        allFood: food
     })
 })
 
@@ -29,8 +30,16 @@ app.get('/drinks', (req, res) => {
 //     res.send(req.params.id);
 // })
 
+
+
 app.get('/drinks/:indexDrinks', (req, res) => {
-    res.render('index.ejs', {
+    res.render('show.ejs', {
         allDrinks: drinks[req.params.indexDrinks]
+    })
+})
+
+app.get('/drinks/food/:indexFood', (req, res) => {
+    res.render('showfood.ejs', {
+        allFood: food[req.params.indexFood]
     })
 })
